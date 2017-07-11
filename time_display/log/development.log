@@ -137,3 +137,11 @@ Processing by TimesController#main as HTML
 Completed 200 OK in 1ms (Views: 0.3ms)
 
 
+Started GET "/pop/jhoiuh" for 127.0.0.1 at 2017-07-10 22:25:12 -0500
+Processing by TimesController#main as HTML
+  Parameters: {"unmatched_route"=>"pop/jhoiuh"}
+  Rendering times/main.html.erb within layouts/application
+  Rendered times/main.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 676ms (Views: 580.4ms)
+
+
