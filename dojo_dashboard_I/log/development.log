@@ -337,3 +337,216 @@ Processing by DojosController#index as HTML
 Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:14:55 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 153ms (Views: 144.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-07-12 14:14:59 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/dojos/new" for 127.0.0.1 at 2017-07-12 14:15:07 -0500
+Processing by DojosController#new as HTML
+  Rendering dojos/new.html.erb within layouts/application
+  Rendered dojos/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dojos" for 127.0.0.1 at 2017-07-12 14:15:09 -0500
+Processing by DojosController#create as HTML
+  Parameters: {"authenticity_token"=>"dGh3/lv1MF7B6m4MEkWZLwK2R0sIVMimeGN/t+4HP/uaYJcgff1Sep7ttEAJ7WEUDOLFxSogx1fsa+h0zp0oyg==", "dojo"=>{"branch"=>"", "street"=>"", "city"=>"", "state"=>""}, "Create Dojo"=>"Submit"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dojos" ("branch", "street", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["branch", ""], ["street", ""], ["city", ""], ["state", ""], ["created_at", "2017-07-12 19:15:09.589734"], ["updated_at", "2017-07-12 19:15:09.589734"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:15:09 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[36mDojo Load (0.2ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dojos/new" for 127.0.0.1 at 2017-07-12 14:15:15 -0500
+Processing by DojosController#new as HTML
+  Rendering dojos/new.html.erb within layouts/application
+  Rendered dojos/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dojos" for 127.0.0.1 at 2017-07-12 14:15:38 -0500
+Processing by DojosController#create as HTML
+  Parameters: {"authenticity_token"=>"nrS+L1x5X57yywiq5igSdCXmuMOMyNPp9mV4m8OsCitwvF7xenE9uq3M0ub9gOpPK7I6Ta683Bhibe9Y4zYdGg==", "dojo"=>{"branch"=>"new york", "street"=>"eastern pkwy", "city"=>"brooklyn", "state"=>"NY"}, "Create Dojo"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "dojos" ("branch", "street", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["branch", "new york"], ["street", "eastern pkwy"], ["city", "brooklyn"], ["state", "NY"], ["created_at", "2017-07-12 19:15:38.086453"], ["updated_at", "2017-07-12 19:15:38.086453"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:15:38 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[36mDojo Load (0.2ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:16:14 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "dojos"[0m
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:16:39 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "dojos"[0m
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:16:41 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "dojos"[0m
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/dojos/7" for 127.0.0.1 at 2017-07-12 14:16:43 -0500
+Processing by DojosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"dvhlivmL8riL9rvJH21n5+e2FxSWQhTtAP10bGqtGYKY8IVU34OQnNTxYYUExZ/c6eKVmrQ2GxyU9eOvSjcOsw==", "id"=>"7"}
+  [1m[36mDojo Load (0.2ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" WHERE "dojos"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "dojos" WHERE "dojos"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:16:43 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "dojos"[0m
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/dojos/6" for 127.0.0.1 at 2017-07-12 14:16:45 -0500
+Processing by DojosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hZtg6XAf03kyjG7rbg4n/YPJ9e9v5GXrigrSZMGW4kVrk4A3VhexXW2LtKd1pt/GjZ13YU2QahoeAkWn4Qz1dA==", "id"=>"6"}
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" WHERE "dojos"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "dojos" WHERE "dojos"."id" = ?[0m  [["id", 6]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:16:45 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "dojos"[0m
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/dojos/5/edit" for 127.0.0.1 at 2017-07-12 14:17:33 -0500
+Processing by DojosController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" WHERE "dojos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering dojos/edit.html.erb within layouts/application
+  Rendered dojos/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/dojos/5" for 127.0.0.1 at 2017-07-12 14:17:52 -0500
+Processing by DojosController#update as HTML
+  Parameters: {"authenticity_token"=>"FmF96wyxtYnf19weqqDqAsAoRfNBqpxHGGGAYigkm4T4aZ01KrnXrYDQBlKxCBI5znzHfWPek7aMaRehCL6MtQ==", "dojo"=>{"branch"=>"France", "street"=>"dunno", "city"=>"Paris", "state"=>"France"}, "Update Dojo"=>"Submit", "id"=>"5"}
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" WHERE "dojos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "dojos" SET "branch" = ?, "city" = ?, "state" = ?, "updated_at" = ? WHERE "dojos"."id" = ?[0m  [["branch", "France"], ["city", "Paris"], ["state", "France"], ["updated_at", "2017-07-12 19:17:52.776886"], ["id", 5]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:17:52 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "dojos"[0m
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/dojos/new" for 127.0.0.1 at 2017-07-12 14:17:56 -0500
+Processing by DojosController#new as HTML
+  Rendering dojos/new.html.erb within layouts/application
+  Rendered dojos/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/dojos/4" for 127.0.0.1 at 2017-07-12 14:18:02 -0500
+Processing by DojosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iPEcDwbz4VBsxpbsjVaUlrhXaz62E6rUeWADZbFoYodm+fzRIPuDdDPBTKCW/myttgPpsJRnpSXtaJSmkfJ1tg==", "id"=>"4"}
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" WHERE "dojos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "dojos" WHERE "dojos"."id" = ?[0m  [["id", 4]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:18:02 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "dojos"[0m
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.2ms)
+
+
