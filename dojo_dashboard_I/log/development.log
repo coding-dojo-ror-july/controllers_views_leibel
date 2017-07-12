@@ -1,0 +1,339 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDojos (20170712184059)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "dojos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "branch" varchar, "street" varchar, "city" varchar, "state" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170712184059"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-12 18:45:18.090251"], ["updated_at", "2017-07-12 18:45:18.090251"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dojos" ("branch", "street", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["branch", "Seattle"], ["street", "1111 Main St"], ["city", "Bellevue"], ["state", "WA"], ["created_at", "2017-07-12 18:46:54.136323"], ["updated_at", "2017-07-12 18:46:54.136323"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dojos" ("branch", "street", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["branch", "San Jose"], ["street", "2222 Zanker Rd"], ["city", "San Jose"], ["state", "CA"], ["created_at", "2017-07-12 18:47:49.156954"], ["updated_at", "2017-07-12 18:47:49.156954"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dojos" ("branch", "street", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["branch", "Burbank"], ["street", "3333 Olive Ave"], ["city", "Burbank"], ["state", "CA"], ["created_at", "2017-07-12 18:48:27.348429"], ["updated_at", "2017-07-12 18:48:27.348429"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dojos" ("branch", "street", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["branch", "Chicago"], ["street", "4444 Institute Pl"], ["city", "Chicago"], ["state", "IL"], ["created_at", "2017-07-12 18:49:05.491383"], ["updated_at", "2017-07-12 18:49:05.491383"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/process" for 127.0.0.1 at 2017-07-12 13:53:25 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/process"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-07-12 13:53:27 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Leibel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Leibel/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 13:54:42 -0500
+Processing by DojosController#index as HTML
+Started GET "/" for 127.0.0.1 at 2017-07-12 13:54:52 -0500
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Dojo Load (0.0ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Dojo Load (0.0ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Dojo Load (0.0ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Dojo Load (0.0ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Dojo Load (0.0ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Dojo Load (0.0ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Dojo Load (0.0ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered dojos/index.html.erb within layouts/application (144.8ms)
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `dojos' for #<#<Class:0x007fc7c41679f0>:0x007fc7c4164930>
+Did you mean?  @dojos):
+     6:     <th>City</th>
+     7:     <th>State</th>
+     8:   </tr>
+     9:   <% dojos.each do |dojo| %>
+    10:   <tr>
+    11:     <td><%= dojo.branch %></td>
+    12:     <td><%= dojo.street %></td>
+  
+app/views/dojos/index.html.erb:9:in `_app_views_dojos_index_html_erb___1970879601142123480_70248008958460'
+Started GET "/" for 127.0.0.1 at 2017-07-12 13:54:57 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[36mDojo Load (0.2ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDojo Load (0.4ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered dojos/index.html.erb within layouts/application (174.4ms)
+Completed 500 Internal Server Error in 187ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `dojos' for #<#<Class:0x007fabfe2deef0>:0x007fabfe2cc4d0>
+Did you mean?  @dojos):
+     6:     <th>City</th>
+     7:     <th>State</th>
+     8:   </tr>
+     9:   <% dojos.each do |dojo| %>
+    10:   <tr>
+    11:     <td><%= dojo.branch %></td>
+    12:     <td><%= dojo.street %></td>
+  
+app/views/dojos/index.html.erb:9:in `_app_views_dojos_index_html_erb__1885466004600882101_70188340293720'
+Started GET "/" for 127.0.0.1 at 2017-07-12 13:55:01 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Dojo Load (0.0ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Dojo Load (0.0ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Dojo Load (0.0ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Dojo Load (0.0ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Dojo Load (0.0ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Dojo Load (0.0ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCACHE Dojo Load (0.0ms)[0m  [1m[34mSELECT  "dojos".* FROM "dojos" LIMIT ?[0m  [["LIMIT", 11]]
+  Rendered dojos/index.html.erb within layouts/application (146.3ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `dojos' for #<#<Class:0x007fabfe2deef0>:0x007fac04118ed0>
+Did you mean?  @dojos):
+     6:     <th>City</th>
+     7:     <th>State</th>
+     8:   </tr>
+     9:   <% dojos.each do |dojo| %>
+    10:   <tr>
+    11:     <td><%= dojo.branch %></td>
+    12:     <td><%= dojo.street %></td>
+  
+app/views/dojos/index.html.erb:9:in `_app_views_dojos_index_html_erb__1885466004600882101_70188389682540'
+Started GET "/" for 127.0.0.1 at 2017-07-12 13:55:10 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 399ms (Views: 396.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 13:55:57 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[36mDojo Load (0.2ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 13:56:08 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[36mDojo Load (0.2ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:06:13 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 124ms (Views: 115.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2017-07-12 14:06:19 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/new"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/dojos/new" for 127.0.0.1 at 2017-07-12 14:06:25 -0500
+Processing by DojosController#new as HTML
+  Rendering dojos/new.html.erb within layouts/application
+  Rendered dojos/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dojo" for 127.0.0.1 at 2017-07-12 14:06:42 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/dojo"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/dojo" for 127.0.0.1 at 2017-07-12 14:07:03 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/dojo"):
+  
+actionpack (5.1.2) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.2) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.2) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.2) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/dojos" for 127.0.0.1 at 2017-07-12 14:07:08 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/dojos/new" for 127.0.0.1 at 2017-07-12 14:07:16 -0500
+Processing by DojosController#new as HTML
+  Rendering dojos/new.html.erb within layouts/application
+  Rendered dojos/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dojos" for 127.0.0.1 at 2017-07-12 14:07:37 -0500
+Processing by DojosController#create as HTML
+  Parameters: {"authenticity_token"=>"pMznvFyXyi7D0PZKgAMPTcGyJ+lI6StpmOLGZ3dnlpxKxAdiep+oCpzXLAabq/d2z+alZ2qdJJgM6lGkV/2BrQ==", "dojo"=>{"branch"=>"Dubai", "street"=>"dunno", "city"=>"Dubai", "state"=>"UAE"}, "Create Dojo"=>"Submit"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dojos" ("branch", "street", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["branch", "Dubai"], ["street", "dunno"], ["city", "Dubai"], ["state", "UAE"], ["created_at", "2017-07-12 19:07:37.714920"], ["updated_at", "2017-07-12 19:07:37.714920"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:07:37 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[36mDojo Load (0.1ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/dojos/new" for 127.0.0.1 at 2017-07-12 14:09:53 -0500
+Processing by DojosController#new as HTML
+  Rendering dojos/new.html.erb within layouts/application
+  Rendered dojos/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dojos" for 127.0.0.1 at 2017-07-12 14:09:54 -0500
+Processing by DojosController#create as HTML
+  Parameters: {"authenticity_token"=>"Un+7ssvritdF2HOhZ5N7k+GF6EX8nK3SMZTe5Uy1bEu8d1ts7ePo8xrfqe18O4Oo79Fqy97ooiOlnEkmbC97eg==", "dojo"=>{"branch"=>"", "street"=>"", "city"=>"", "state"=>""}, "Create Dojo"=>"Submit"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "dojos" ("branch", "street", "city", "state", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["branch", ""], ["street", ""], ["city", ""], ["state", ""], ["created_at", "2017-07-12 19:09:54.284882"], ["updated_at", "2017-07-12 19:09:54.284882"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-12 14:09:54 -0500
+Processing by DojosController#index as HTML
+  Rendering dojos/index.html.erb within layouts/application
+  [1m[36mDojo Load (0.2ms)[0m  [1m[34mSELECT "dojos".* FROM "dojos"[0m
+  Rendered dojos/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.2ms)
+
+
